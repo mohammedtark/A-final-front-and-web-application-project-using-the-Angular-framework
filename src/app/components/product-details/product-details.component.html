@@ -1,0 +1,33 @@
+<div class="row align-items-center position-relative" *ngIf="Product">
+  <div class="col-md-4">
+    <div>
+      <owl-carousel-o [options]="customOptions">
+
+        <ng-container *ngFor="let slide of Product.images">
+          <ng-template carouselSlide>
+            <img [src]="slide">
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div>
+      <h5>{{Product.title}}</h5>
+      <p>{{Product.description}}</p>
+      <h6>{{Product.category.name}}</h6>
+      <div class="d-flex justify-content-between align-items-center">
+        <span>{{Product.price}}</span>
+        <span>{{Product.ratingsAverage}}
+          <i class="fa fa-star rating-color"></i>
+        </span>
+      </div>
+      <button class="btn bg-main text-white d-block w-100" (click)="addToCart(Product._id)">+Add to Card</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="position-absolute w-100 h-100 top-0 start-0 bg-black opacity-50 d-flex justify-content-center align-items-center">
+  <i class="fa fa-spin fa-spinner fa-2xl text-main"></i>
+</div>
+

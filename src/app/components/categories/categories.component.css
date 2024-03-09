@@ -1,0 +1,23 @@
+.card:hover{
+  box-shadow:1px 1px 10px #4fa74f;
+}
+.card{
+  transition: all .5s;
+}
+img {
+  object-position: center;
+  object-fit: cover;
+  height: 300px;
+}
+.g-4, .gx-4 {
+  --bs-gutter-x: 1.5rem;
+}
+.g-4, .gy-4 {
+  --bs-gutter-x: 1.5rem;
+}
+.img-fluid {
+  max-width: 100%;
+}
+.card-img, .card-img-bottom, .card-img-top {
+  width: 100%;
+}

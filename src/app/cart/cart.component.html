@@ -1,0 +1,33 @@
+<div class="bg-light p-4">
+  <div class="d-flex justify-content-between mt-3">
+    <h3>Number Of Items : <span class="text-main">{{cart.numOfCartItems}}</span></h3>
+    <h3>total price : <span class="text-main">{{cart.data.totalCartPrice}}</span></h3>
+    </div>
+    <div class="row align-items-center" *ngFor="let product of cart.data.products">
+      <div class="col-md-2">
+        <div>
+          <img [src]="product.product.imageCover" class="w-100" alt="">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div>
+          <h4>{{product.product.title}}</h4>
+          <span class="text-main">{{product.price}}</span>
+          <div>
+            <span class="text-danger cursor-pointer"(click)="removeItem(product.product.id)">
+              <i class="fa fa-trash"></i>
+              remove
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 d-flex justify-content-between">
+        <button class="btn btn-updata" (click)="updataCart(product.product.id,product.count+1)">+</button>
+        <span>{{product.count}}</span>
+        <button class="btn btn-updata"(click)="updataCart(product.product.id,product.count-1)">-</button>
+      </div>
+    </div>
+    <a class="btn-main mt-3" [routerLink]="['/checkout/',cart.data._id]">
+      Online Payment <img src="./assets/images/assets project/images/visa.svg" alt="visa logo">
+    </a>
+</div>

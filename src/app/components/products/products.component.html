@@ -1,0 +1,29 @@
+
+
+<div class="row g-3 position-relative">
+  <h2 class="text-center text-main fw-bold py-4">All Products</h2>
+
+  <div class="col-md-2" *ngFor="let product of Products" >
+    <div class="product p-2">
+      <i *ngIf="!whishListData.includes(product._id)" (click)="addFav(product._id)" class="fa-regular fa-heart heart"></i>
+      <i *ngIf="whishListData.includes(product._id)" (click)="removeFav(product._id)" class="fa-solid fa-heart fa-2x heart"></i>
+
+      <div [routerLink]="['/details/', product._id]">
+        <img [src]="product.imageCover" class="w-100" alt="">
+        <div>
+          <h5 class="text-main h6">{{product.category.name}}</h5>
+          <h4 class="h6">{{product.title.split(" ", 2).join(" ")}}
+            <span *ngIf="product.title.split(' ').length > 2">...</span>
+          </h4>
+          <div class="d-flex justify-content-between">
+            <span>{{product.price | currency:"EGP"}}</span>
+            <span>{{product.ratingsAverage}} <i class="fa fa-star rating-color"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn bg-main text-white d-block w-100" (click)="addToCart(product._id)">+ Add to Cart</button>
+    </div>
+  </div>
+</div>
+

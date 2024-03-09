@@ -1,0 +1,113 @@
+
+
+<nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/images/freshcart-logo.svg" alt="">
+    </a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/home"
+            routerLinkActive="text-success fw-bold"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/cart"
+            routerLinkActive="text-success fw-bold"
+            >Cart</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/products"
+            routerLinkActive="text-success fw-bold"
+            >products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/categories"
+            routerLinkActive="text-success fw-bold"
+            >Categories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/brands"
+            routerLinkActive="text-success fw-bold"
+            >Brands</a
+          >
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link"routerLink="/whishlist"routerLinkActive="text-success fw-bold">
+            wish list
+          </a>
+        </li>
+
+        <!-- <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/setting"
+            routerLinkActive="text-success fw-bold"
+            >Setting</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/customers"
+            routerLinkActive="text-success fw-bold"
+            >Customers</a
+          >
+        </li> -->
+      </ul>
+
+
+
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0 align-content-center">
+
+        <li class="nav-item">
+
+          <a class="nav-link position-relative" routerLink="/cart">
+            <i class="fas fa-cart-shopping fa-2x text-main"></i>
+           <span class="badge bg-info position-absolute top-0 end-0">{{numberOfitems}}</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-flex gap-3 me-2 mt-3">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-tiktok"></i>
+        </li>
+      </ul>
+
+      <li class="navbar-nav">
+        <span (click)="signOut()">signOut</span>
+      </li>
+    </div>
+  </div>
+</nav>

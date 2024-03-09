@@ -1,0 +1,17 @@
+<form (ngSubmit)="handleShippingForm()" [formGroup]="shippindForm">
+<div>
+  <label for="details">Details</label>
+  <input type="tel" id="details" class="form-control" formControlName="details">
+</div>
+<div>
+  <label for="phone">Phone</label>
+  <input type="tel" id="phone" class="form-control" formControlName="phone">
+</div>
+<div>
+  <label for="city">City</label>
+  <input type="text" id="city" class="form-control" formControlName="city">
+</div>
+<div class="pt-2">
+  <button class="btn bg-main text-white">Submit</button>
+</div>
+</form>

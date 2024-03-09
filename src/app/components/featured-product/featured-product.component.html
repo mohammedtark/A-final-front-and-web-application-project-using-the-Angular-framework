@@ -1,0 +1,37 @@
+
+<input type="search" class="form-control w-50 mx-auto my-3 bg-light" [(ngModel)]="searchTerm" placeholder="search...">
+
+<div class="row g-3 position-relative">
+  <div class="col-md-2 " *ngFor="let product of allProducts | filterProducts:searchTerm" [title]="product.title">
+
+    <div class="product p-2">
+      <!-- add -->
+      <i *ngIf="!whishListData.includes(product._id)" (click)="addFav(product._id)" class="fa-regular fa-heart heart  heart"></i>
+      <!-- remove -->
+      <i *ngIf="whishListData.includes(product._id)" (click)="removeFav(product._id)"   class="fa-solid fa-heart fa-2x heart"></i>
+
+
+      <div class="" [routerLink]="['/details/',product._id]">
+        <div>
+          <img [src]="product.imageCover" class="w-100" alt="">
+          <div>
+            <h5 class="text-main h6">{{product.category.name}}</h5>
+            <h4 class="h6">{{product.title|trim|lowercase}}
+            <span *ngIf="product.title.split(' ').length > 2">...</span></h4>
+            <div class="d-flex justify-content-between">
+              <span>{{product.price|currency:"EGP"}}</span>
+              <span>{{product.ratingsAverage}} <i class="fa fa-star rating-color"></i></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="btn bg-main text-white d-block w-100" (click)="addToCart(product._id)">+Add to Card</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isLoadin" class="position-absolute w-100 h-100 top-0 start-0 bg-black opacity-50 d-flex justify-content-center align-items-center">
+  <i class="fa fa-spin fa-spinner fa-2xl text-main"></i>
+</div>
+
