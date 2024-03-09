@@ -10,6 +10,7 @@ import { WhishlistService } from 'src/app/services/whishlist.service';
 import { FormsModule } from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-products',
   standalone:true,
@@ -79,6 +80,7 @@ addProduct(productId:string){
       }
     })
     }
+    searchTerm:string=''
     removeFav(prodId:string|undefined):void{
       this._WhishlistService.removeWhishList(prodId).subscribe({
         next:(res)=>{
@@ -88,5 +90,5 @@ addProduct(productId:string){
         }
       })
     }
-    SearchTerm:string=''
+
 }

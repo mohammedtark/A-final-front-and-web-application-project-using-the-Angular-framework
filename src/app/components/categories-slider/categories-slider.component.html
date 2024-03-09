@@ -3,7 +3,9 @@
   <ng-container *ngFor="let categorie of allCategories">
     <ng-template carouselSlide>
       <img height="200px" [src]="categorie.image" [alt]="categorie.name" [title]="categorie.name">
-      <span class="text-main">{{categorie.name}}</span>
+      <div class="text-center">
+        <span class="text-main ">{{categorie.name}}</span>
+      </div>
     </ng-template>
   </ng-container>
 

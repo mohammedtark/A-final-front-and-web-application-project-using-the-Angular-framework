@@ -2,8 +2,7 @@
 
 <div class="row g-3 position-relative">
   <h2 class="text-center text-main fw-bold py-4">All Products</h2>
-
-  <div class="col-md-2" *ngFor="let product of Products" >
+  <div class="col-md-2" *ngFor="let product of Products " >
     <div class="product p-2">
       <i *ngIf="!whishListData.includes(product._id)" (click)="addFav(product._id)" class="fa-regular fa-heart heart"></i>
       <i *ngIf="whishListData.includes(product._id)" (click)="removeFav(product._id)" class="fa-solid fa-heart fa-2x heart"></i>
